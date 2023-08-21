@@ -1,23 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import Fruits from './Fruits';
 
 function App() {
+  let title = "My Fruits App"
+
+  let fruits = ["Mango", "Apple", "Banana", "Melons"]
+
+  function addOne(){
+    console.log("This is the add one function. It adds 1+1 equals 1")
+  }
+
+  function addTwo(num){
+    console.log(num+2)
+  }
+
+  function logFruit(fruit){
+    console.log(fruit)
+  }
+
+  function addFruit(fruit){
+    let newFruits = [
+      ...fruits,
+      fruit
+    ]
+  }
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Fruits title={title} fruits={fruits} addFunction={addOne} addTwo={addTwo} logFruit={logFruit}/>
     </div>
   );
 }
